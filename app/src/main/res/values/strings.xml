@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pokemon Cards</string>
+    <string name="loading">Loading Pokemon cards…</string>
+    <string name="error_loading">Error loading cards. Please try again.</string>
+    <string name="retry">Retry</string>
+    <string name="card_detail">Card Detail</string>
+</resources>
