@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../providers/pokemon_provider.dart';
 import '../models/pokemon_card.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'battle_screen.dart';
+import 'welcome_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,14 +27,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: InkWell(
+        title: GestureDetector(
           onTap: () {
-            context.read<PokemonProvider>().refreshCards();
-            setState(() {
-              _selectedCard = null;
-            });
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => const WelcomeScreen(),
+              ),
+            );
           },
-          child: const Text('Pokemon Cards'),
+          child: Image.asset(
+            'assets/images/logo.png',
+            height: 40,
+            fit: BoxFit.contain,
+          ),
         ),
       ),
       body: Consumer<PokemonProvider>(
